@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DPRLAB_SEI_Pizza_Master_Topology",
+  "description": "Public Sandbox: Canonical structural topology registry for macro-level food realism. Maps geometric vector tokens, layered spatial distribution, and micro-tessellation bounds for a hyper-realistic artisan pizza asset.",
+  "metadata": {
+    "orchestrator": "Google Gemini",
+    "infrastructure": "DPRLAB SEI Pipeline",
+    "classification": "Public Demonstration / Non-Proprietary",
+    "version": "1.0.0"
+  },
+  "global_dimensions": {
+    "diameter_mm": 355.6,
+    "thickness_profile": "neapolitan_variable",
+    "coordinate_system": "cartesian_cylindrical_hybrid"
+  },
+  "structural_layers": [
+    {
+      "layer_id": "L01_cornicione_crust",
+      "type": "structural_base",
+      "geometry": {
+        "primitive": "torus_deformed",
+        "major_radius_mm": 165.0,
+        "minor_radius_mm": 22.8,
+        "tessellation_density": "ultra_high"
+      },
+      "macro_displacement": {
+        "frequency": "high_irregular",
+        "amplitude_bounds_mm": {
+          "min": -4.0,
+          "max": 12.5
+        },
+        "porosity_vector_tokens": [
+          { "coord": [0.0, 165.0, 10.0], "bubble_volume_mm3": 450.0 },
+          { "coord": [45.0, 155.0, 12.0], "bubble_volume_mm3": 820.0 }
+        ]
+      }
+    },
+    {
+      "layer_id": "L02_sauce_bed",
+      "type": "distribution_matrix",
+      "geometry": {
+        "primitive": "disk_deformed",
+        "radius_mm": 145.0,
+        "nominal_thickness_mm": 3.5
+      },
+      "fluid_topography": {
+        "viscosity_token": "high_opaque",
+        "pooling_nodes": [
+          { "center_offset": [12.0, -34.0], "depth_modifier": 1.4 },
+          { "center_offset": [-50.0, 22.0], "depth_modifier": 0.8 }
+        ]
+      }
+    },
+    {
+      "layer_id": "L03_mozzarella_clumps",
+      "type": "subsurface_scatter_geometry",
+      "geometry": {
+        "primitive": "metaball_cluster",
+        "melt_threshold": 0.85
+      },
+      "distribution": {
+        "generation_mode": "randomized_cluster_points",
+        "seed": 20260528,
+        "node_count": 14,
+        "average_radius_mm": 28.0
+      }
+    },
+    {
+      "layer_id": "L04_pepperoni_tokens",
+      "type": "discrete_instances",
+      "geometry": {
+        "primitive": "cupped_disk",
+        "diameter_mm": 44.0,
+        "lip_curl_angle_deg": 12.5
+      },
+      "instancing_table": [
+        { "instance_id": "pep_01", "position_polar": [45.0, 32.0], "rotation_3d": [5.0, -2.0, 120.0] },
+        { "instance_id": "pep_02", "position_polar": [110.0, 65.0], "rotation_3d": [-4.0, 6.0, 45.0] },
+        { "instance_id": "pep_03", "position_polar": [235.0, 90.0], "rotation_3d": [1.0, 1.0, 12.0] }
+      ]
+    },
+    {
+      "layer_id": "L05_basil_leaves",
+      "type": "organic_deformable_instances",
+      "geometry": {
+        "primitive": "nurbs_surface_pliant",
+        "control_points_count": 16
+      },
+      "instancing_table": [
+        { "instance_id": "basil_01", "position_polar": [15.0, 12.0], "wrinkle_factor": 0.65 },
+        { "instance_id": "basil_02", "position_polar": [185.0, 55.0], "wrinkle_factor": 0.42 }
+      ]
+    }
+  ]
+}
