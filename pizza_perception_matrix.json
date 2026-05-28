@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DPRLAB_SEI_Pizza_Perception_Matrix",
+  "description": "Public Sandbox: Material perception registry mapping physically-based rendering parameters, subsurface scattering (SSS), and thermodynamic surface variations for macro food realism.",
+  "metadata": {
+    "orchestrator": "Google Gemini",
+    "infrastructure": "DPRLAB SEI Pipeline",
+    "associated_topology": "DPRLAB_SEI_Pizza_Master_Topology",
+    "version": "1.0.0"
+  },
+  "material_profiles": {
+    "mozzarella_sss": {
+      "albedo_color": "#F4F0E6",
+      "subsurface_scattering": {
+        "sss_enabled": true,
+        "scattering_radius_rgb": [0.15, 0.08, 0.03],
+        "scattering_scale": 1.2,
+        "anisotropy_g": 0.75
+      },
+      "surface_properties": {
+        "roughness_bounds": [0.12, 0.35],
+        "specular_intensity": 0.58,
+        "ior_dielectric": 1.46
+      }
+    },
+    "leopard_crust_char": {
+      "base_color_map": "crust_baked_diffuse.png",
+      "micro_roughness": {
+        "min_value": 0.82,
+        "max_value": 0.98,
+        "frequency_scale": 45.0
+      },
+      "thermodynamic_nodes": [
+        {
+          "node_id": "char_01",
+          "target_layer": "L01_cornicione_crust",
+          "burn_intensity": 0.95,
+          "specular_kill": true
+        }
+      ]
+    },
+    "pepperoni_exudate": {
+      "albedo_color": "#B22222",
+      "metallic": 0.0,
+      "roughness_map": "oil_sheen_roughness.png",
+      "clearcoat": {
+        "amount": 0.85,
+        "roughness": 0.05
+      }
+    }
+  }
+}
